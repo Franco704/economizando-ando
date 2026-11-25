@@ -1,0 +1,69 @@
+/* Preguntas de opción múltiple, abiertas, resultado de los simulacros y filtros por parcial. */
+.check-sec, .practice, .sources { margin-top: var(--e-6); }
+.quiz { list-style: none; padding: 0 !important; margin: 0 0 1em !important; }
+.quiz .q { margin: 0 0 var(--e-4); max-width: none; }
+.quiz fieldset { margin: 0; min-width: 0; padding: var(--e-4); background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--r-2); }
+.quiz legend { float: left; width: 100%; padding: 0; margin: 0 0 12px; font-weight: 600; line-height: 1.5; }
+.quiz legend + * { clear: both; }
+.q-n { font-family: var(--f-mono); font-weight: 500; color: var(--tenue); }
+.q-from { display: block; margin-top: 2px; font-weight: 400; font-size: .8rem; color: var(--tenue); }
+.q-opts { display: grid; gap: 8px; }
+.opt { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; align-items: start; min-height: 44px; padding: 10px 12px; border: 1px solid var(--linea); border-radius: var(--r-2); cursor: pointer; font-size: .95rem; line-height: 1.5; transition: border-color .12s, background .12s; }
+.opt:hover { border-color: var(--tenue); }
+.opt input { position: absolute; opacity: 0; pointer-events: none; }
+.opt-l { display: inline-grid; place-items: center; width: 26px; height: 26px; border: 1.5px solid var(--linea); font: 600 .78rem var(--f-mono); color: var(--tenue); }
+.opt:has(input:checked) { border-color: var(--acento); background: var(--acento-suave); }
+.opt:has(input:checked) .opt-l { background: var(--acento); border-color: var(--acento); color: var(--sobre-acento); }
+.opt:has(input:focus-visible) { outline: 2px solid var(--acento); outline-offset: 2px; }
+.opt:has(input:disabled) { cursor: default; }
+.q .opt.right { border-color: var(--ok); background: var(--ok-suave); }
+.q .opt.right .opt-l { background: var(--ok); border-color: var(--ok); color: var(--sobre-acento); }
+.q .opt.wrong { border-color: var(--error); background: var(--error-suave); }
+.q .opt.wrong .opt-l { background: var(--error); border-color: var(--error); color: var(--sobre-acento); }
+.q-feedback:empty { display: none; }
+.q-feedback { margin-top: 12px; font-size: .95rem; line-height: 1.55; }
+.q-feedback p { margin: 0 0 4px; }
+.q.is-ok .q-feedback strong { color: var(--ok); }
+.q.is-bad .q-feedback strong { color: var(--error); }
+.q-link { font-size: .9rem; }
+.exam-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 8px; }
+.exam-left { margin: 0; color: var(--tenue); font-size: .92rem; }
+.exam-extra:not(:empty) { margin-top: 8px; }
+
+/* Resultado: anillo con el porcentaje */
+.score { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px 22px; align-items: center; margin-top: var(--e-5); padding: var(--e-5); background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--r-3); }
+.score p { margin: 0 0 6px; }
+.ring { width: 112px; height: 112px; }
+.ring circle { fill: none; stroke-width: 10; }
+.ring .bg { stroke: var(--superficie-2); }
+.ring .fg { transform: rotate(-90deg); transform-origin: 50% 50%; animation: ringIn 1s ease .1s both; }
+.score.pass .ring .fg { stroke: var(--ok); }
+.score.fail .ring .fg { stroke: var(--error); }
+.ring text { font: 700 26px var(--f-titulo); font-stretch: 112%; fill: var(--tinta); text-anchor: middle; }
+.score-mods { list-style: none; padding: 0 !important; font-size: .92rem; }
+.score-mods li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--linea); max-width: 30rem; }
+.score-mods li span:last-child { font-family: var(--f-mono); white-space: nowrap; }
+@keyframes ringIn { from { stroke-dashoffset: var(--c); } }
+@media (min-width: 560px) {
+  .score { grid-template-columns: auto minmax(0, 1fr); }
+  .score > :not(.ring) { grid-column: 2; }
+  .ring { grid-row: 1 / span 3; }
+}
+
+/* Filtro por parcial (abiertas, simulacros, laboratorios, machete) */
+.filtro { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--e-4); }
+.filtro .btn { border-left: 3px solid var(--acento); }
+.seccion-parcial > h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; color: var(--acento); }
+.seccion-parcial > h2 span { font: 400 .95rem var(--f-ui); color: var(--tenue); }
+.acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* Marcas de origen: pregunta tomada en parcial, del libro, punto de investigación */
+.q-src { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 99px; background: var(--superficie-2); color: var(--tenue); font: 600 .74rem/1.6 var(--f-ui); vertical-align: .1em; }
+.q-src.px { background: var(--pi-suave); color: var(--pi); }
+.exercise.parcial { border-left: 3px solid var(--pi); }
+.exercise.parcial .ex-tag { color: var(--pi); }
+.ex-exams { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 0; font-size: .84rem; color: var(--tenue); }
+.ex-exams .chip { font-weight: 500; text-decoration: none; }
+.ex-research { padding: 1px 9px; border-radius: 99px; background: var(--acento-suave); color: var(--acento); font-weight: 600; font-size: .78rem; }
+.sol-file { margin-top: 12px; }
+.file-name { margin: 0 0 6px !important; font: 600 .8rem var(--f-mono); color: var(--tenue); }

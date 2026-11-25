@@ -13,7 +13,29 @@ Guía de estudio de **Economía 2026 (UTN-FRT)**, cátedra Ing. Ramón A. Aranda
 
 Sitio en GitHub Pages: [franco704.github.io/economizar](https://franco704.github.io/economizar/)
 
-No necesita instalación: es HTML, CSS y JavaScript. Para usarlo sin internet, descargá el repositorio y abrí `index.html`. El progreso se guarda en el navegador de cada persona.
+No necesita instalación ni compilación: es HTML, CSS y JavaScript con módulos ES. Como los navegadores no cargan módulos desde `file://`, para usarlo sin internet descargá el repositorio, levantá un servidor estático en la carpeta (por ejemplo `python3 -m http.server`) y abrí `http://localhost:8000`. El progreso se guarda en el navegador de cada persona.
+
+Pruebas: `npm test` (carga todo el temario y valida lecciones, laboratorios, preguntas, parciales y fórmulas).
+
+## Cómo está organizado
+
+La estructura cuenta de qué trata la materia (arquitectura *screaming*):
+
+```
+index.html              armazón: barra, índice, dock inferior en móvil
+src/main.js             raíz de composición: rutas por hash y vistas
+src/temario/            microeconomia/ y macroeconomia/ (un archivo por tema), catálogo y ayudantes de redacción y gráficas
+src/bibliografia/       preguntas de Blanco (V/F y opción múltiple) y sus cuadros grises
+src/practicos/          puntos de investigación de los TP
+src/examenes/           parciales reales resueltos e integral
+src/laboratorios/       gráficas interactivas y laboratorios genéricos
+src/estudio/            progreso, preguntas, ejercicios, fórmulas y otras guías
+src/vistas/             inicio, lección, cuestionarios (tema, simulacro, repaso, integral) y recursos
+src/ui/ src/nucleo/     armazón, íconos, barras de avance; DOM, almacenamiento y rutas
+styles/                 tokens, base, armazón, contenido, estudio, laboratorios, vistas y animaciones
+```
+
+El diseño es *mobile-first*: en el celular todo se alcanza desde el dock inferior (Inicio, Índice, Gráficas, Parciales, Repasar) y el índice completo con buscador; desde 1024 px el índice queda fijo y las herramientas pasan a la barra superior.
 
 ## También probá
 

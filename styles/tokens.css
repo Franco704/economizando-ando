@@ -1,0 +1,71 @@
+/* Economizar: papel cuadriculado, como en el parcial. El color codifica: verde la Micro, violeta la Macro, ámbar oscuro el integral;
+   en las gráficas, demanda azul y oferta roja como en Blanco y Mankiw.
+   Archivo ancha para títulos y cifras (los rótulos de un gráfico), Archivo para la interfaz y Source Serif 4 para leer. */
+:root {
+  --fondo: #f1f4ef;
+  --superficie: #fbfcfa;
+  --superficie-2: #e2e8e0;
+  --cuadricula: #dae3d9;
+  --tinta: #16201a;
+  --tinta-2: #35423a;
+  --tenue: #59665d;
+  --linea: #c8d2c9;
+  --ok: #17794f; --ok-suave: #dcf0e5;
+  --aviso: #935400; --aviso-suave: #f7e9cf;
+  --error: #bb2530; --error-suave: #fae1e2;
+  --codigo-fondo: #e3e9e1; --codigo-tinta: #1b241e;
+  --sobre-acento: #fff;
+
+  /* Parciales */
+  --p1: #0b7548; --p1-suave: #d9efe2;
+  --p2: #6a3fa6; --p2-suave: #ebe2f6;
+  --pi: #8d4a0c; --pi-suave: #f5e5d2;
+  --acento: var(--p1); --acento-suave: var(--p1-suave);
+
+  /* Curvas: demanda, oferta, equilibrio, costos marginal y medios, Lorenz */
+  --c-d: #1f5fd0; --c-s: #d2362b; --c-eq: #d98200; --c-cmg: #7b3fe4; --c-ctme: #0b8a9a; --c-cvme: #2f9e44; --c-cfme: #868e96; --c-x: #d6336c;
+
+  --f-titulo: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --f-ui: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-texto: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+  --f-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --t--2: .72rem; --t--1: .85rem; --t-0: 1.0625rem; --t-1: 1.33rem; --t-2: 1.66rem; --t-3: 2.07rem; --t-4: clamp(2.1rem, 1.5rem + 2.8vw, 3rem); --t-5: clamp(2.4rem, 1.4rem + 5vw, 4.6rem);
+  --e-1: .25rem; --e-2: .5rem; --e-3: .75rem; --e-4: 1rem; --e-5: 1.5rem; --e-6: 2rem; --e-7: 3rem; --e-8: 4.5rem;
+  --r-1: 4px; --r-2: 8px; --r-3: 14px;
+  --sombra: 0 1px 0 rgba(22, 32, 26, .04), 0 10px 28px -18px rgba(22, 32, 26, .35);
+  --barra: 56px;
+  --dock: 64px;
+  --lateral: 300px;
+  --medida: 66ch;
+  --margen: 16px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --fondo: #101511; --superficie: #171e19; --superficie-2: #222b25; --cuadricula: #1b241e; --tinta: #e5ece6; --tinta-2: #c3cec6; --tenue: #8f9c93; --linea: #2c372f;
+    --ok: #4cc38a; --ok-suave: #13281e; --aviso: #eeb14d; --aviso-suave: #2d2412; --error: #ff7b7f; --error-suave: #331719;
+    --codigo-fondo: #0c100d; --codigo-tinta: #dde6df; --sobre-acento: #101511;
+    --p1: #4fcb8c; --p1-suave: #12301f; --p2: #b596f2; --p2-suave: #261c3e; --pi: #f0a14c; --pi-suave: #33230f;
+    --c-d: #6aa1ff; --c-s: #ff6b6b; --c-eq: #ffb02e; --c-cmg: #b18cff; --c-ctme: #3bc9db; --c-cvme: #69db7c; --c-cfme: #adb5bd; --c-x: #f783ac;
+    --sombra: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 30px -16px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --fondo: #101511; --superficie: #171e19; --superficie-2: #222b25; --cuadricula: #1b241e; --tinta: #e5ece6; --tinta-2: #c3cec6; --tenue: #8f9c93; --linea: #2c372f;
+  --ok: #4cc38a; --ok-suave: #13281e; --aviso: #eeb14d; --aviso-suave: #2d2412; --error: #ff7b7f; --error-suave: #331719;
+  --codigo-fondo: #0c100d; --codigo-tinta: #dde6df; --sobre-acento: #101511;
+  --p1: #4fcb8c; --p1-suave: #12301f; --p2: #b596f2; --p2-suave: #261c3e; --pi: #f0a14c; --pi-suave: #33230f;
+  --c-d: #6aa1ff; --c-s: #ff6b6b; --c-eq: #ffb02e; --c-cmg: #b18cff; --c-ctme: #3bc9db; --c-cvme: #69db7c; --c-cfme: #adb5bd; --c-x: #f783ac;
+  --sombra: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 30px -16px rgba(0, 0, 0, .7);
+  color-scheme: dark;
+}
+
+/* El acento sigue al parcial: el de la página (body) o el de cada bloque (data-u) */
+body[data-unit='p2'], [data-u='p2'] { --acento: var(--p2); --acento-suave: var(--p2-suave); }
+body[data-unit='int'], [data-u='int'], [data-u='px'] { --acento: var(--pi); --acento-suave: var(--pi-suave); }
+[data-u='p1'] { --acento: var(--p1); --acento-suave: var(--p1-suave); }
+
+@media (min-width: 768px) { :root { --margen: 32px; --t-0: 1.1rem; } }
+@media (min-width: 1024px) { :root { --margen: 48px; } }
