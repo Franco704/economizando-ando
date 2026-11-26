@@ -80,6 +80,7 @@ export function vistaInicio(main) {
             ['#/integral', 'integral', 'Integral', `${Math.min(25, PREGUNTAS_INTEGRAL.length)} preguntas que cruzan temas y ${INTEGRAL.cases.length} problemas, con reloj de 120 minutos.`],
             ['#/formulas', 'formula', 'Fórmulas', 'Todo lo que hay que saber calcular, tema por tema.'],
             ['#/cuadros', 'cuadro', 'Cuadros de Blanco', `Los ${CUADROS.length} cuadros grises del libro y los puntos de investigación de los TP.`],
+            ['#/apuntes', 'apuntes', 'Apuntes de Juana Vicente', 'Apuntes y resumen en PDF de la cursada 2026.'],
             ['#/repaso', 'repasar', 'Repasar', 'Las preguntas que fallaste, hasta que las aciertes.'],
           ].map(([h, i, t, d]) => `<li><a href="${h}">${icono(i, 22)}<span><b>${t}</b>${d}</span></a></li>`).join('')}
         </ul>

@@ -19,6 +19,7 @@ const HERRAMIENTAS = [
   ['#/graficas', 'Gráficas', 'grafica'],
   ['#/formulas', 'Fórmulas', 'formula'],
   ['#/cuadros', 'Cuadros', 'cuadro'],
+  ['#/apuntes', 'Apuntes', 'apuntes'],
   ['#/simulacro', 'Simulacro', 'simulacro'],
   ['#/integral', 'Integral', 'integral'],
   ['#/repaso', 'Repasar', 'repasar'],

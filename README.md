@@ -57,4 +57,6 @@ El diseño es *mobile-first*: en el celular todo se alcanza desde el dock inferi
 
 ## Agradecimientos
 
+A **Juana Vicente**, que compartió sus apuntes de clase y su resumen de la cursada 2026 (página *Apuntes*, `#/apuntes`; los PDF están en `apuntes/`).
+
 A **Mateo Rusconi**, autor original de las animaciones que esta guía hereda de Backeando Ando: la pantalla de entrada a cada tema, los glifos animados de las lecciones y los microefectos de los cuestionarios vienen de su "Laboratorio Frontend DSW".

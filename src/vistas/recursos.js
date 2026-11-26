@@ -82,3 +82,19 @@ export function vistaParciales(main) {
   // Las preguntas de parcial no montan laboratorios: las gráficas están en la lección
   main.querySelectorAll('.lab-mount').forEach((el) => el.remove());
 }
+
+// Apuntes en PDF que compartieron otros estudiantes (se sirven tal cual desde apuntes/)
+const APUNTES = [
+  ['apuntes/juana-vicente-apuntes.pdf', 'Apuntes de clase', '49 páginas. Desde la primera clase (condiciones de aprobación y programa) clase por clase.', '2,8 MB'],
+  ['apuntes/juana-vicente-resumen.pdf', 'Resumen: primer y segundo parcial', '47 páginas. De qué es la economía, escasez y oferta y demanda a dinero, Banco Central, PIB, inflación, desigualdad y pobreza.', '2,9 MB'],
+];
+
+export function vistaApuntes(main) {
+  document.title = 'Apuntes, Economizar';
+  main.innerHTML = `
+    <article class="lesson apuntes">
+      <h1>Apuntes de Juana Vicente</h1>
+      <p class="tldr">Los apuntes de clase y el resumen de los dos parciales que armó <b>Juana Vicente</b> cursando Economía en 2026, y que compartió para esta guía. Ante cualquier diferencia, valen la cátedra y las lecciones de la guía. ¡Gracias, Juana!</p>
+      <ul class="guias">${APUNTES.map(([h, t, d, peso]) => `<li><a href="${h}" target="_blank" rel="noopener"><b>${t}</b><span>${d}</span></a><a class="guia-repo" href="${h}" download>Descargar PDF (${peso})</a></li>`).join('')}</ul>
+    </article>`;
+}
