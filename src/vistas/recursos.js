@@ -7,7 +7,7 @@ import { ejercicios, cuadroGris, examenDe } from '../estudio/ejercicios.js';
 const cabeza = (u) => `<h2>${u.name}<span>${u.title}</span></h2>`;
 
 export function vistaGraficas(main) {
-  document.title = 'Taller de gráficas, Economizar';
+  document.title = 'Taller de gráficas, Economizando Ando';
   const todas = LECCIONES.flatMap((l) => (l.labs || []).filter((c) => DE_GRAFICAS.includes(c.type)).map((c) => ({ c, l, m: modulo(l.module) })));
   main.innerHTML = `
     <article class="lesson graficas-page">
@@ -21,7 +21,7 @@ export function vistaGraficas(main) {
 }
 
 export function vistaFormulas(main) {
-  document.title = 'Fórmulas, Economizar';
+  document.title = 'Fórmulas, Economizando Ando';
   const conFormulas = (u) => MODULOS.filter((m) => m.unit === u.id && FORMULAS.some((f) => f.m === m.id));
   main.innerHTML = `
     <article class="lesson formulas-page">
@@ -35,7 +35,7 @@ export function vistaFormulas(main) {
 }
 
 export function vistaCuadros(main) {
-  document.title = 'Cuadros de Blanco, Economizar';
+  document.title = 'Cuadros de Blanco, Economizando Ando';
   const investigacion = EJERCICIOS.filter(({ ex }) => ex.research).sort((a, b) => a.ex.official.localeCompare(b.ex.official, 'es', { numeric: true }));
   main.innerHTML = `
     <article class="lesson cuadros-page">
@@ -54,7 +54,7 @@ export function vistaCuadros(main) {
 
 // Parciales reales: cada pregunta con su resolución, lo que más se repite y qué temas pesan más
 export function vistaParciales(main) {
-  document.title = 'Parciales resueltos, Economizar';
+  document.title = 'Parciales resueltos, Economizando Ando';
   const tomados = EJERCICIOS.filter(({ ex }) => ex.exam);
   const total = tomados.reduce((n, { ex }) => n + ex.exam.length, 0);
   const repetidas = tomados.filter(({ ex }) => ex.exam.length > 1).sort((a, b) => b.ex.exam.length - a.ex.exam.length);
@@ -90,7 +90,7 @@ const APUNTES = [
 ];
 
 export function vistaApuntes(main) {
-  document.title = 'Apuntes, Economizar';
+  document.title = 'Apuntes, Economizando Ando';
   main.innerHTML = `
     <article class="lesson apuntes">
       <h1>Apuntes de Juana Vicente</h1>

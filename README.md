@@ -1,4 +1,4 @@
-# Economizar
+# Economizando Ando
 
 Guía de estudio de **Economía 2026 (UTN-FRT)**, cátedra Ing. Ramón A. Aranda, con las gráficas en el centro: en los parciales es lo que más puntaje suma.
 
@@ -11,7 +11,7 @@ Guía de estudio de **Economía 2026 (UTN-FRT)**, cátedra Ing. Ramón A. Aranda
 - **Parciales resueltos**: 15 parciales y recuperatorios reales de la cátedra (2022 a 2025), pregunta por pregunta, con lo que más se repite y qué temas pesan más (52 ejercicios nuevos).
 - 489 preguntas de repaso, incluido el banco de verdadero/falso y opción múltiple de Blanco (de donde salen muchas preguntas de parcial), cuestionario por tema, simulacro por parcial, **integral** con reloj (preguntas que cruzan temas y 6 problemas con grilla de corrección), repaso de las falladas, taller de gráficas y hoja de fórmulas.
 
-Sitio en GitHub Pages: [franco704.github.io/economizar](https://franco704.github.io/economizar/)
+Sitio en GitHub Pages: [franco704.github.io/economizando-ando](https://franco704.github.io/economizando-ando/)
 
 No necesita instalación ni compilación: es HTML, CSS y JavaScript con módulos ES. Como los navegadores no cargan módulos desde `file://`, para usarlo sin internet descargá el repositorio, levantá un servidor estático en la carpeta (por ejemplo `python3 -m http.server`) y abrí `http://localhost:8000`. El progreso se guarda en el navegador de cada persona.
 

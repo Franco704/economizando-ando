@@ -7,7 +7,7 @@ import { OTRAS_GUIAS } from '../estudio/otras-guias.js';
 import { barras } from '../ui/barras.js';
 import { icono } from '../ui/iconos.js';
 
-const REPO = 'https://github.com/Franco704/economizar';
+const REPO = 'https://github.com/Franco704/economizando-ando';
 
 // Demanda D = 9 + k − 0,8X (k = cambio en la renta) y oferta O = 1 + 0,8X: el equilibrio se calcula, no se dibuja a ojo.
 function mercado(k, anim) {
@@ -33,7 +33,7 @@ function filaTema(m) {
 }
 
 export function vistaInicio(main) {
-  document.title = 'Economizar, guía de Economía';
+  document.title = 'Economizando Ando, guía de Economía';
   const sigue = siguienteLeccion();
   const nLabs = LECCIONES.reduce((n, l) => n + (l.labs?.length || 0), 0);
   const nPx = EJERCICIOS.filter(({ ex }) => ex.exam).length;

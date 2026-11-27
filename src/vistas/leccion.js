@@ -21,7 +21,7 @@ export function vistaLeccion(main, idx) {
   const prev = LECCIONES[idx - 1], next = LECCIONES[idx + 1];
   const labs = l.labs || [];
   document.body.dataset.unit = m.unit;
-  document.title = `${l.title}, Economizar`;
+  document.title = `${l.title}, Economizando Ando`;
 
   // Laboratorios que el cuerpo no ubica van al final de la teoría
   const donde = l.body + (l.exercises || []).map((e) => e.prompt).join('');

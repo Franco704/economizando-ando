@@ -26,7 +26,7 @@ export function vistaCuestionarioTema(main, m) {
 export function vistaSimulacro(main, uid) {
   const u = parcial(uid);
   if (!u) { location.replace(`#/simulacro/${modulo(siguienteLeccion().module).unit}`); return; }
-  document.title = `Simulacro del ${u.title.toLowerCase()}, Economizar`;
+  document.title = `Simulacro del ${u.title.toLowerCase()}, Economizando Ando`;
   document.body.dataset.unit = u.id;
   const mods = MODULOS.filter((m) => m.unit === u.id);
   // Reparte las preguntas entre los temas para que ninguno domine
@@ -44,7 +44,7 @@ export function vistaSimulacro(main, uid) {
 }
 
 export function vistaRepaso(main) {
-  document.title = 'Repasar, Economizar';
+  document.title = 'Repasar, Economizando Ando';
   const qs = paraRepasar().map((id) => preguntaPorId[id]);
   main.innerHTML = `
     <article class="lesson quiz-page">
@@ -58,7 +58,7 @@ export function vistaRepaso(main) {
 
 // Integral: 25 preguntas difíciles de todo el año, problemas tipo parcial y 120 minutos. Devuelve la limpieza del reloj.
 export function vistaIntegral(main) {
-  document.title = 'Integral, Economizar';
+  document.title = 'Integral, Economizando Ando';
   document.body.dataset.unit = 'int';
   const qs = shuffle(PREGUNTAS_INTEGRAL).slice(0, 25);
   let reloj = null;
